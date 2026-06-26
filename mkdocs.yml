@@ -1,0 +1,71 @@
+site_name: NR7Y CW Firmware Docs
+site_description: Companion user documentation for the NR7Y CW firmware projects
+site_url: https://briand.github.io/cw-firmware-docs/
+site_author: NR7Y
+copyright: "&copy; 2026 NR7Y and contributors"
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+
+repo_url: https://github.com/briand/cw-firmware-docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+      primary: indigo
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+      primary: indigo
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.tabs.link
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Identify Your Radio: hardware/identify-your-radio.md
+  - Download and Flash: download-and-flash.md
+  - Menus and Settings: menus-and-settings.md
+  - Code Practice Oscillator: code-practice-oscillator.md
+  - Hardware and Reworks:
+    - Overview: hardware/index.md
+    - Paddle Rework Overview: hardware/rework-overview.md
+    - CEC Paddle Cable (UV-K5 v1): hardware/cec-cable.md
+    - UV-K5 (v1 original): hardware/rework-uv-k5-v1.md
+    - UV-K5 (v3): hardware/rework-uv-k5-v3.md
+    - UV-K1: hardware/rework-uv-k1.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path:
+        - docs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
