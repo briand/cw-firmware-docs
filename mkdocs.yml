@@ -46,7 +46,7 @@ nav:
   - Menus and Settings: menus-and-settings.md
   - Code Practice Oscillator: code-practice-oscillator.md
   - Hardware and Reworks:
-    - Overview: hardware/index.md
+    - CW Paddle Input: hardware/cw-paddle-input.md
     - Paddle Rework Overview: hardware/rework-overview.md
     - CEC Paddle Cable (UV-K5 v1): hardware/cec-cable.md
     - UV-K5 (v1 original): hardware/rework-uv-k5-v1.md

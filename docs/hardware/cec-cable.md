@@ -26,7 +26,7 @@ Once the cable is plugged in and calibrated, select one of the CEC options under
 | CEC Cable Handkey | Treated as a straight key — no iambic keyer. |
 
 !!! note
-    PTT can't be used at the same time as a CEC Cable input mode, since both share the same line. Use the radio's normal PTT button to transmit; the paddle only keys CW.
+    PTT can't be used at the same time as a CEC Cable input mode, since they share a same wire. Use the CEC-connected paddle for CW keying only, and don't forget to unplug the cable when using voice modes like FM.
 
 ## Building the cable
 
@@ -65,7 +65,7 @@ Your cable is likely to work "out of the box" after building, but if it's not re
 - **No internal rework needed.** This is the main appeal of the CEC cable: you get paddle input on the original UV-K5 without opening the case or removing/adding any internal components.
 - **Resistor tolerance matters, but not as much as you'd think.** Prefer 1% tolerance resistors if you can, but don't fret over it. Looser tolerances widen the gap between the dit and dah voltage levels you'll see, and may even cause the two readings to land close enough together to misread. However, you can calibrate to the values in your particular copy of the cable.
 - **Calibrate if it's not working right.** Follow the [calibration instructions](#calibrating) if you're getting weird results, it may help.
-- **"CW KEY STUCK" on boot.** Like the port-based input modes, the firmware checks for a stuck-closed key whenever a CEC input mode is active. After flashing, if you still have the programming cable plugged in while in CEC input mode, you may see this message — see the [paddle rework FAQ](rework-overview.md#when-is-cw-input-valid-what-does-the-message-cw-key-stuck-mean) for more detail.
+- **"CW KEY STUCK" on boot.** Like the port-based input modes, the firmware checks for a stuck-closed key whenever a CEC input mode is active. After flashing, if you still have the programming cable plugged in while in CEC input mode, you may see this message — see the [CW paddle input FAQ](cw-paddle-input.md#when-is-cw-input-valid-what-does-the-message-cw-key-stuck-mean) for more detail.
 - **Headset jack behavior.** Plugging in the CEC cable uses the same jack as the stock microphone/headset. Unplug it when you want to use the internal mic for a voice mode.
 
 ## Next

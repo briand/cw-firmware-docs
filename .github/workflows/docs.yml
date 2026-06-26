@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v3
+        uses: astral-sh/setup-uv@v8
         with:
           version: latest
 
@@ -35,13 +35,13 @@ jobs:
 
       - name: Stamp build date into footer
         run: |
-          sed -i "s/^copyright: \"\(.*\)\"$/copyright: \"\1 \&middot; built $(date -u +'%Y-%m-%d')\"/" mkdocs.yml
+          sed -i "s/^copyright: \"\(.*\)\"$/copyright: \"\1 \&middot; built $(date -u +'%Y-%m-%d %H:%M UTC')\"/" mkdocs.yml
 
       - name: Build docs
         run: uv run zensical build
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -54,4 +54,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

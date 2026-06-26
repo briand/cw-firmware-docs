@@ -55,4 +55,4 @@ It's a K1. You bought a K1. Both models with and without the chin count.
 ## Next
 
 - [Download and flash](../download-and-flash.md)
-- [Paddle rework overview](rework-overview.md)
+- [CW paddle input — cable or rework?](cw-paddle-input.md)

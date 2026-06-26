@@ -9,8 +9,8 @@ It will eventually cover both firmware repos and their shared operating concepts
 - [Identify your radio](hardware/identify-your-radio.md)
 - [Download and flash](download-and-flash.md)
 - [Menus and settings](menus-and-settings.md)
+- [CW paddle input — cable or rework?](hardware/cw-paddle-input.md)
 - [Paddle rework overview](hardware/rework-overview.md)
-- [CEC paddle cable (UV-K5 v1)](hardware/cec-cable.md)
 
 ## What this site is for
 
@@ -18,6 +18,15 @@ It will eventually cover both firmware repos and their shared operating concepts
 - Model-specific hardware rework instructions
 - Starter operating guides for day-to-day use
 - A stable place for screenshots, diagrams, and rework photos
+
+## Upstream projects
+
+The CW mods documented here build on top of two upstream firmware projects, and neither would exist without them. Big thanks to both:
+
+- [egzumer/uv-k5-firmware-custom](https://github.com/egzumer/uv-k5-firmware-custom) — the upstream firmware for the original UV-K5 (v1). egzumer has put tons of work into that project and its feature set. egzumer firmware is based on the original open-source K5 firmware by DualTachyon, work by OneOfEleven plus mods from fagci.
+- [armel/uv-k1-k5v3-firmware-custom](https://github.com/armel/uv-k1-k5v3-firmware-custom) — Armel's (F4HWN) "Fusion" firmware for the UV-K5 v3 and UV-K1. Fusion is fantastic, incredibly featureful, and actively developed; I'll try to pull and keep up to date with Armel's changes and new features as I'm able. Fusion is also originally based on egzumer.
+
+Each upstream project has its own README and documentation covering its full feature set. This site only documents the CW-specific mods layered on top — for everything else the firmware can do, see the upstream repos directly.
 
 ## Open for contributions
 
