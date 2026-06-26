@@ -45,14 +45,27 @@ To build it:
 
 The radio-side **Ring** is not used and can be left unconnected.
 
-When a paddle contact closes, it shorts its corresponding resistor's far end to the common sleeve, pulling the radio-side tip to a voltage set by that resistor. This is why the two CEC calibration thresholds (`CWcLo` for the 20k contact, `CWcHi` for the 10k contact) exist — the firmware reads the resulting voltage to figure out which contact (if any) is closed.
+When a paddle contact closes, it shorts its corresponding resistor's far end to the common sleeve, pulling the radio-side tip to a voltage set by that resistor. This is why the two CEC calibration thresholds (`CWcLo` for the 20k contact, `CWcHi` for the 10k contact) exist — the firmware reads the resulting voltage to figure out which contact (if any, one, or both) is closed.
+
+## Calibrating
+
+Your cable is likely to work "out of the box" after building, but if it's not reliably keying or you think your resistors are a little off-tolerance, you can use the calibration settings to let the firmware target the values of your copy of the cable.
+
+1. Plug in your CEC cable with an iambic paddle connected.
+2. Power on the radio while holding the PTT and upper side button ("side 1")
+3. Upon boot, the radio should say "Release all keys" - after releasing the buttons, it should boot directly into the menu. The radio is now in "tech mode" or "hidden menu" mode, with extra settings in the menu.
+4. Move to menu item 75, `CWCrd` - "ADC Read Check" and enter this item.
+5. The screen will show `CWCrd` and a number. This is the ADC value reading from your cable. Hold each key of the CW paddle for 10 seconds each, and note the value - it should stabilize at a low number for one of the paddles, and a higher number for the other. For example in my radio and cable, I get 213 and 396 for the two numbers; yours should be in that ballpark. Write these numbers down.
+6. Exit the menu item and enter the next item down, `CWcLo`. Change the value to the lower of the two values you recorded.
+6. Save the value (**M** button) and enter the next menu item down, `CWcHi`. Change the value to the higher of the two values you recorded.
+7. Save the value and power cycle the radio, test in normal boot mode.
 
 ## Other things to know
 
 - **No internal rework needed.** This is the main appeal of the CEC cable: you get paddle input on the original UV-K5 without opening the case or removing/adding any internal components.
-- **Resistor tolerance matters.** Use 1% (or better) resistors if you can. Looser tolerances widen the gap between the dit and dah voltage levels you'll see, and may even cause the two readings to land close enough together to misread under some conditions. Recalibrate (`CWcrd`/`CWcLo`/`CWcHi`) if you swap resistors or build a new cable.
-- **Calibrate before relying on it.** Skipping calibration can leave the firmware reading default thresholds that don't match your specific cable's actual resistor values and your radio's ADC, leading to missed or "stuck key" detections.
-- **"CW KEY STUCK" on boot.** Like the port-based input modes, the firmware checks for a stuck-closed key whenever a CEC input mode is active. If your cable, resistor values, or calibration are off, you may see this message — see the [paddle rework FAQ](rework-overview.md#when-is-cw-input-valid-what-does-the-message-cw-key-stuck-mean) for more detail.
+- **Resistor tolerance matters, but not as much as you'd think.** Prefer 1% tolerance resistors if you can, but don't fret over it. Looser tolerances widen the gap between the dit and dah voltage levels you'll see, and may even cause the two readings to land close enough together to misread. However, you can calibrate to the values in your particular copy of the cable.
+- **Calibrate if it's not working right.** Follow the [calibration instructions](#calibrating) if you're getting weird results, it may help.
+- **"CW KEY STUCK" on boot.** Like the port-based input modes, the firmware checks for a stuck-closed key whenever a CEC input mode is active. After flashing, if you still have the programming cable plugged in while in CEC input mode, you may see this message — see the [paddle rework FAQ](rework-overview.md#when-is-cw-input-valid-what-does-the-message-cw-key-stuck-mean) for more detail.
 - **Headset jack behavior.** Plugging in the CEC cable uses the same jack as the stock microphone/headset. Unplug it when you want to use the internal mic for a voice mode.
 
 ## Next
