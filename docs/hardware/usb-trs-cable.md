@@ -12,6 +12,9 @@ the original UV-K5 — a no-rework way to plug in a paddle — but since v3/K1
 expose real digital lines on USB-C instead of a single ADC line, the wiring
 is direct, with no resistors or calibration involved.
 
+!!! important
+    This cable is **not** a "USB-C audio adapter" or any other USB-C to 1/8" TRS adapter device that you might find on Amazon today. It's a passive cable with no electronics, and it doesn't match any standard cable that device manufacturers currently make. You will have to custom build this cable.
+
 ## How it works
 
 - **DP** (USB D+) — wire to the paddle's TRS **Tip** (dit contact). This wire is _usually_ green inside most USB cables.
