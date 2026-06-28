@@ -36,6 +36,8 @@ selected in [`CWkin`](#cw-key-input-cwkin).
 
 - **Mode A** — Curtis iambic Mode A style, edge-triggered dit/dah memory
 - **Mode B** — Accu-keyer iambic Mode B style, dit/dah memory, adds the trailing opposite element when both paddles are released during an element, and Elecraft-style partial edge-triggering
+- **Ultimatic** — both paddles squeezed at once sends whichever one was pressed *most recently*, rather than alternating dit/dah like the iambic modes. No dit/dah memory.
+- **Bug** — semi-automatic bug keyer. The dah paddle behaves like a plain hand key (hold it down for a continuous dah, any length). The dit paddle auto-repeats dits at the configured [`CWwpm`](#cw-keying-speed-cwwpm) speed for as long as it's held, with no trailing element or extra gap when released.
 
 Default: Mode B.
 
@@ -44,7 +46,7 @@ Default: Mode B.
 Sets the keyer speed in words per minute. Applies to both the iambic keyer
 and the macro message playback speed.
 
-    - Range: 10–45 WPM, depending on firmware version
+- Range: 10–45 WPM.
 
 Default: 18 WPM.
 
@@ -96,8 +98,8 @@ The short-detect routine also runs at radio startup, and if a stuck key is detec
     | USB Port Iambic Reversed | Same as above with dit/dah swapped. |
     | USB Port Handkey | USB-C TRS input treated as a straight key on either paddle contact, no iambic keyer. |
 
-    !!! danger
-        The USB-C Port feature is not shipping in firmware _just yet_
+    !!! note
+        The 'USB Port' input modes require a [USB-C to TRS cable](hardware/usb-trs-cable.md)
 
 
 

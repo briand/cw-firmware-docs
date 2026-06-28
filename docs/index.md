@@ -1,23 +1,29 @@
 # CW Firmware Docs
 
-This site is the companion manual for the CW firmware family.
+This site is the companion manual for the Quansheng UV-K5/K5v3/K1 firmware CW mods by NR7Y:
 
-It will eventually cover both firmware repos and their shared operating concepts, while keeping the hardware-specific instructions split out where they need to differ.
+* [uv-k5-firmware-custom](https://github.com/briand/uv-k5-firmware-custom-cw)
+* [uv-k1-k5v3-firmware-custom](https://github.com/briand/uv-k1-k5v3-firmware-custom)
 
 ## Start here
 
 - [Identify your radio](hardware/identify-your-radio.md)
 - [Download and flash](download-and-flash.md)
+- [Main screen](main-screen.md)
 - [Menus and settings](menus-and-settings.md)
 - [CW paddle input — cable or rework?](hardware/cw-paddle-input.md)
 - [Paddle rework overview](hardware/rework-overview.md)
 
-## What this site is for
+## Why the CW mod?
 
-- Shared CW feature documentation
-- Model-specific hardware rework instructions
-- Starter operating guides for day-to-day use
-- A stable place for screenshots, diagrams, and rework photos
+This mod builds on existing open-source firmware for the respective radio models. They're great, but they don't enable CW (Continuous Wave - morse code) sending. The CW mod enables precise transmission of CW morse code, and a rich set of features for the CW operator.
+
+- Automatic iambic keyer with A/B/Ultimatic/Bug modes
+- paddle support using the PTT/Side1 buttons
+- External paddle support with rework - allows direct connection of a standard paddle with no cable change
+- External paddle support without rework using a custom cable
+- Macro message recording by keying and playback
+- Code Practice mode with optional flashlight LED sending
 
 ## Upstream projects
 

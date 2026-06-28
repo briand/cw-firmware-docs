@@ -8,7 +8,7 @@ If you're not sure which radio model you have, follow the [radio identification 
 
 | You want to... | Choice | Tradeoff |
 | --- | --- | --- |
-| Avoid opening the radio | Get or make a custom cable: ([CEC](cec-cable.md) for v1, USB-C to TRS cable for v3/K1) _when it becomes available soon_ | Paddle works with a purpose-built cable only, and you still have to build or acquire a cable |
+| Avoid opening the radio | Get or make a custom cable: [CEC cable](cec-cable.md) for v1, [USB-C to TRS cable](usb-trs-cable.md) for v3/K1 | Paddle works with a purpose-built cable only, and you still have to build or acquire a cable |
 | Use any off-the-shelf TRS paddle cable | [Perform the rework](rework-overview.md) | Requires opening the case and soldering |
 
 !!! danger "Important"
@@ -18,7 +18,7 @@ If you're not sure which radio model you have, follow the [radio identification 
 
 ### Is CEC cable input the same thing as the paddle rework?
 
-No. CEC cable input is a separate CW input mode, which does not require opening up the radio and making a rework. However, CEC requires a custom cable to the paddle in order to work, and the CEC input mode is only valid on UVK5 v1 radios. The circuits of the K5 v3 and K1 does not support the tricks used in the CEC cable. See the [CEC paddle cable page](cec-cable.md) for how it works and how to build one.
+No. CEC cable input is a separate CW input mode, which does not require opening up the radio and making a rework. However, CEC requires a custom cable to the paddle in order to work, and the CEC input mode is only valid on UVK5 v1 radios. The circuits of the K5 v3 and K1 does not support the tricks used in the CEC cable — instead those models support a [USB-C to TRS cable](usb-trs-cable.md) that does a similar job over their USB-C port. See the [CEC paddle cable page](cec-cable.md) for how it works and how to build one.
 
 ### How is the microphone affected by the rework?
 
@@ -47,4 +47,5 @@ After the hardware is wired correctly, CW input works whenever the radio is in C
 ## Next
 
 - [CEC paddle cable (UV-K5 v1)](cec-cable.md)
+- [USB-C to TRS cable (UV-K5 v3 / UV-K1)](usb-trs-cable.md)
 - [Paddle rework overview](rework-overview.md)
