@@ -41,6 +41,21 @@ If you're not sure which radio model you have, follow the [radio identification 
 !!! warning "Mic behavior"
     The external mic/PTT path no longer works the same way after this rework. An external mic will not be able to trigger PTT. The internal mic still works when the paddle is unplugged, but once the paddle is plugged in the mic is switched out of the circuit, so unplug the paddle when using a voice mode.
 
+## Rework Schematic
+
+Each radio version has different reference designators for the resistors, but the fundamentals of this rework schematic are the same on all versions. Pin 23 / PB11 in the schematic below is the SWDIO pin. That is a different pin number on the K5v3/K1 microcontroller, but its use and the pad where the jumper wire is soldered to is the same.
+
+![Rework Schematic](../assets/paddle-rework/rework_schematic.png)
+
+Original schematic by MentalDetector:
+https://github.com/mentalDetector/Quansheng_UV-K5_.9?tab=readme-ov-file
+
+### “Hey isn’t that the SWDIO line for SWD programming and debug?”
+- Yes it is, and
+this rework will prevent SWD from working (even in the bootloader) because there's too strong of a pullup on the line. If you need
+to use SWD debugging, you’ll need to remove the wire from the SWDIO pad or
+perform the older beta rework instead (see the bottom of this doc). If you have no idea what SWD is, don’t worry about this.
+
 ## Next
 
 - [CW Paddle Input FAQs](cw-paddle-input.md#faqs)
