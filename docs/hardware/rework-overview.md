@@ -48,7 +48,7 @@ Each radio version has different reference designators for the resistors, but th
 ![Rework Schematic](../assets/paddle-rework/rework_schematic.png)
 
 Original schematic by MentalDetector:
-https://github.com/mentalDetector/Quansheng_UV-K5_.9?tab=readme-ov-file
+https://github.com/mentalDetector/Quansheng_UV-K5_PCB_R51-V1.4_PCB_Reversing_Rev._0.9
 
 ### “Hey isn’t that the SWDIO line for SWD programming and debug?”
 - Yes it is, and
