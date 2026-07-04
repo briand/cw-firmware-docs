@@ -1,7 +1,8 @@
+## View the doc site >> [https://briand.github.io/cw-firmware-docs/](https://briand.github.io/cw-firmware-docs/)
+
 # NR7Y CW Firmware Docs
 
-This repository will host the shared user documentation for the CW firmware family.
-
+This repository hosts shared user documentation for the CW mod firmware family.
 
 ## Local preview
 
