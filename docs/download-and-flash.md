@@ -3,7 +3,12 @@
 Not sure which radio you have? Check the [radio identification guide](hardware/identify-your-radio.md) first.
 
 !!! danger
-    Make **sure** you know which radio model you have, and use the correct firmware family for that radio. It's very easy to flash the wrong firmware onto a radio, and very hard to fix when that happens.
+    Make **sure** you know which radio model you have, and use the correct firmware family for that radio. 
+    
+    * You **must** use the correct firmware for the radio model.
+    * You **must** use the correct flashing tool or mode for that model.
+
+    It's very easy to flash the wrong firmware onto a radio or use the wrong tool/mode, and very hard to fix when that happens.
 
 ## Get the firmware
 
