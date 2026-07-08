@@ -35,6 +35,21 @@ modes (USB Port Iambic, USB Port Iambic Reversed, Handkey). If D+/D- got swapped
 
 ![USBC-TRS wiring diagram](../assets/USBC_TRS_cable.drawio.png)
 
+## RFI Issues
+
+Testing has revealed that while this input mechanism works, it's extremely vulnerable to self-RFI from the radio transmitting. The symptoms are perpetually transmitting after hitting a key, or an occasional glitch of the other key sending than the one you're hitting.
+
+The USB port input mode is extremely sensitive to RFI because of the electrical design of the USB port's ground line on the radio. Efforts have been made to improve the results, but there are likely still situations where RFI can get in and cause a hard keydown or constant keying. If you experience a hard keydown, hold the EXIT key to stop sending.
+
+Best practices to avoid RFI lockup:
+
+- Keep your key cable short and shielded
+- Use only as much power as you need; Medium is much less likely to cause problems than High power.
+- Use a balanced radiating antenna, or move the antenna away from the radio with coax. An operator reported they had success by adding a 'rat tail' counterpoise to their antenna.
+- A drastic option: connect a wire from the paddle ground (or USB port shield/ground) to the real radio ground, such as the antenna shield or the negative terminal on the back of the battery. The USB ground is *not* the same as the radio ground, and this is some of the reason for the issue.
+
+Ongoing work will be put into trying to improve this further, which may include different wiring techniques or settings in the future.
+
 ## Next
 
 - [Menus and settings — CW Key Input](../menus-and-settings.md#cw-key-input-cwkin)

@@ -18,10 +18,13 @@ Download a ready-to-flash binary from the releases page of the firmware repo for
 
 [uv-k5-firmware-custom releases](https://github.com/briand/uv-k5-firmware-custom-cw/releases)
 
+Latest binary for K5 original: [nr7y_1.2.packed.bin](https://github.com/briand/uv-k5-firmware-custom-cw/releases/download/v1.2/nr7y_1.2.packed.bin)
+
 ### UV-K5 v3 / UV-K1 downloads
 
 [uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases)
 
+Latest binary for K5v3 / K1: [nr7y.cw.v1.2.3.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.2.3/nr7y.cw.v1.2.3.bin)
 ## Flash it
 
 !!! tip
