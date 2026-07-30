@@ -22,9 +22,11 @@ Latest binary for K5 original: [nr7y_1.2.packed.bin](https://github.com/briand/u
 
 ### UV-K5 v3 / UV-K1 downloads
 
-[uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases)
+All releases: [uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases)
 
-Latest binary for K5v3 / K1: [nr7y.cw.v1.2.3.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.2.3/nr7y.cw.v1.2.3.bin)
+Latest binary for K5v3 / K1: [nr7y.k1-k5v3.v1.3.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.3/nr7y.k1-k5v3.v1.3.bin)
+
+Chirp Module: [nr7y.k1-k5v3.chirp.v1.3.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.3/nr7y.k1-k5v3.chirp.v1.3.py)
 ## Flash it
 
 !!! tip
