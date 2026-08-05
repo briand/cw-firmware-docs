@@ -35,6 +35,7 @@ saved as your normal `CWwpm` setting on the way out.
 | **UP** / **DOWN** | Adjust sending speed in WPM (range 10–45 inside CPO). Saved as your `CWwpm` setting on exit if changed. |
 | **\*** | Toggle the backlight on/off for the duration of CPO. |
 | **4** | Toggle flashlight-on-key-down, so the flashlight LED flashes in time with your sending. |
+| **5** | Clear the previously decoded text. |
 
 ## See also
 
