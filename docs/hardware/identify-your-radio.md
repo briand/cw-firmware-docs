@@ -37,7 +37,7 @@ The label says "V3". It's that easy, mostly.
 
     Version 2 radios may have also been marked without the V3 at some time.
 
-    See [https://github.com/armel/uv-k1-k5v3-firmware-custom/discussions/54]()
+    See [https://github.com/armel/uv-k1-k5v3-firmware-custom/discussions/54](https://github.com/armel/uv-k1-k5v3-firmware-custom/discussions/54)
 
 ![v3 label](../assets/k5v3_label.jpeg)
 
