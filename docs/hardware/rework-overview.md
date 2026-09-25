@@ -50,6 +50,18 @@ Each radio version has different reference designators for the resistors, but th
 Original schematic by MentalDetector:
 https://github.com/mentalDetector/Quansheng_UV-K5_PCB_R51-V1.4_PCB_Reversing_Rev._0.9
 
+### Rework Description
+
+In the schematic, you can see more easily the reason for the changes:
+
+1. Remove resistor R72 to disconnect the TRS Sleeve line from PTT - We need the sleeve as our ground line for keying, which we create by driving low on the SERIAL_TX GPIO output. This has the side effect of preventing an external microphone PTT from working on a modified radio.
+
+2. Remove resistor R70 to disconnect the TRS Tip line from +3.3v - Without removing this, we would not be able to read the tip/dit input correctly from the paddle. This has the side effect of no longer supplying +3.3v to an external microphone, although I don't know any external mics that need this power anyway - maybe someone uses it to power a number pad backlight.
+
+3. Add the wire from TRS Ring line to GPIO pin PB11 to create the input for reading Ring/dah
+
+4. Add the wire from TRS tip to the PTT GPIO to create the input for reading Tip/dit
+
 ### “Hey isn’t that the SWDIO line for SWD programming and debug?”
 - Yes it is, and
 this rework will prevent SWD from working (even in the bootloader) because there's too strong of a pullup on the line. If you need
