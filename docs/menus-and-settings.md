@@ -74,7 +74,8 @@ The short-detect routine also runs at radio startup, and if a stuck key is detec
 
 On the UV-K5 v3 / UV-K1, the CW KEY INPUT [side-key
 action](main-screen.md#side-key-actions) steps through these inputs from the
-main screen, with the same stuck-key check.
+main screen and applies the one you pick when you press **M**, with the same
+stuck-key check.
 
 #### Common input configs (all radios)
 

@@ -68,6 +68,9 @@ The firmware automatically opens squelch full-time whenever switching to USB and
     Switching a VFO to CW selects the 2k filter. Switching it back to FM or AM
     puts back the width it had before.
 
+    The `WIDE NARROW` [side-key action](#side-key-actions) switches the same
+    filter.
+
 === "UV-K5 (v1 original)"
 
     Only does this while the radio is in CW mode, in the other modes this will launch the scanner. Cycles through the available IF filter bandwidths, which can help narrow out other signals or noise next to the one you're trying to copy. The current filter width (when not the default "wide" setting) is shown in the status area of the screen.
@@ -130,6 +133,11 @@ The screen also closes when you start keying, or after 5 seconds without a
 key press. While an offset is applied, the VFO's info line shows a tag such as
 `R+0.12` (RIT), `X-0.05` (XIT) or `RX+0.12` (both), in kHz.
 
+The radio's error beep can't sound in CW, so a key the screen can't act on
+plays a single dit on the sidetone instead. That's a step past ±9.99 kHz (the
+offset stops at the limit), **0** when it can't move the dial, and **M** or
+**F**.
+
 ## CW side-key actions (UV-K5 v3 / UV-K1 only) {#side-key-actions}
 
 You can assign these actions to the side keys and to a long press of **M**,
@@ -141,17 +149,25 @@ and repeat actions are in the same list.
 |---|---|
 | CW KEYER MODE | Steps through Iambic A, Iambic B, Ultimatic and Bug, like [`CWkmod`](menus-and-settings.md#cw-keyer-mode-cwkmod), and shows the new mode in a popup. |
 | PROPER ROGER | Sends a "proper roger": an R with a long dah (di-daaaah-dit). [`CWrgr`](menus-and-settings.md#cwrgr) sets the dah length. The LED glows amber while it sends. CW mode only; other modes give an error beep. |
-| CW SPEED | Opens a popup where up and down change the keyer speed (10–45 WPM) while you listen. The speed is saved when the popup closes. |
-| FILTER WIDTH | Switches the filter, the same as **F** then long press **4**. |
-| CW KEY INPUT | The first press shows the current [key input](menus-and-settings.md#cw-key-input-cwkin), and each further press (or up/down) steps to the next one. The new input applies when the popup closes, and **EXIT** cancels it. If the new input reads as stuck, the radio goes back to PTT HandKey and shows `KEY STUCK`. |
+| CW SPEED | Opens a popup where the arrow keys change the keyer speed (10–45 WPM) while you listen. The speed is saved when the popup closes. In CW, a step past 10 or 45 WPM plays a single dit on the sidetone, since the radio's error beep can't sound in CW. |
+| CW KEY INPUT | The first press shows the current [key input](menus-and-settings.md#cw-key-input-cwkin), and each further press (or the arrow keys) steps to the next one. Press **M** to apply it. The popup shows a ✓ at its left end for **M** (with a small `M` beside it when `SetNav` is UP/DOWN) and an ✗ at its right end for **EXIT**. **EXIT**, keying, any other key, or 5 seconds without a key press cancels it. If the new input reads as stuck, the radio goes back to PTT HandKey and shows `KEY STUCK`. |
 | CW BREAK-IN | Turns [break-in](menus-and-settings.md#cw-break-in-cwbkin) on or off, the same as long press **7**. The `BKIN` icon shows the result. |
 | CODE PRACTICE | Opens the [Code Practice Oscillator](code-practice-oscillator.md). |
 
 The keyer mode, speed and key input popups sit over the middle of the main
-screen and close after 2 seconds without a key press. Keying also closes them
-and keeps the change. While one is up, PTT and the side keys work as usual, so
-pressing the same side key again steps the popup or closes it. Popups are
-hidden while you transmit.
+screen. The arrows on the speed and key input popups follow `SetNav`:
+left/right with LEFT/RIGHT, up/down with UP/DOWN.
+
+- **M** or **EXIT** closes a popup. For key input, only **M** applies the new
+  input.
+- Any other key closes the popup and then does its normal job, so you can
+  start typing a frequency straight away.
+- Keying or transmitting closes it too. A new speed stays; a key input you
+  haven't applied with **M** is dropped.
+- Pressing the same side key again steps the popup or closes it. A side key
+  with a different action closes the popup and runs that action.
+- The keyer mode and speed popups close after 2 seconds without a key press.
+  The key input popup closes after 5 seconds, without applying the new input.
 
 ### Default key layout
 
