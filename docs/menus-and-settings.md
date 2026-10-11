@@ -53,6 +53,10 @@ selected in [`CWkin`](#cw-key-input-cwkin).
 
 Default: Mode B.
 
+On the UV-K5 v3 / UV-K1, the CW KEYER MODE [side-key
+action](main-screen.md#side-key-actions) steps through these modes from the
+main screen and applies the one you pick when you press **M**.
+
 ## CW Keying Speed — `CWwpm`
 
 Sets the keyer speed in words per minute. Applies to both the iambic keyer
@@ -136,6 +140,10 @@ choose:
 - **Play** — send the stored message once.
 - **Repeat** — send the stored message repeatedly, with the delay set by
   [`CWmrpt`](#cw-message-repeat-delay-cwmrpt) between repeats.
+
+On the UV-K5 v3 / UV-K1, a message can hold the prosigns SK, BK, KA, SN and
+UR. Each counts as one character and plays back run together. CHIRP shows them
+as `<SK>`, `<BK>` and so on, and you can type them that way.
 
 Recording and playback both require the radio to be in CW mode (TX
 modulation set to CW). Break-in (`CWbkin`) must be enabled for a message to transmit RF, otherwise it will play sidetone only. Messages will play with the WPM set in `CWwpm`.
