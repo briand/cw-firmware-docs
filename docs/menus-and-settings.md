@@ -49,7 +49,7 @@ selected in [`CWkin`](#cw-key-input-cwkin).
 - **Mode A** — Curtis iambic Mode A style, edge-triggered dit/dah memory
 - **Mode B** — Accu-keyer iambic Mode B style, dit/dah memory, adds the trailing opposite element when both paddles are released during an element, and Elecraft-style partial edge-triggering
 - **Ultimatic** — both paddles squeezed at once sends whichever one was pressed *most recently*, rather than alternating dit/dah like the iambic modes. No dit/dah memory.
-- **Bug** — semi-automatic bug keyer. The dah paddle behaves like a plain hand key (hold it down for a continuous dah, any length). The dit paddle auto-repeats dits at the configured [`CWwpm`](#cw-keying-speed-cwwpm) speed for as long as it's held, with no trailing element or extra gap when released.
+- **Bug** — semi-automatic bug keyer. The dah paddle behaves like a plain hand key (hold it down for a continuous dah, any length). The dit paddle auto-repeats dits at the configured [`CWwpm`](#cw-keying-speed-cwwpm) speed for as long as it's held, with no trailing element or extra gap when released. On the UV-K5 v3 / UV-K1, the radio leaves one element space after a dah before the next element. A dit you flick during that space, or while the dah is still down, is remembered and sent as soon as the space has passed, so a quick flick right after a dah is never lost.
 
 Default: Mode B.
 
@@ -141,8 +141,8 @@ choose:
 - **Repeat** — send the stored message repeatedly, with the delay set by
   [`CWmrpt`](#cw-message-repeat-delay-cwmrpt) between repeats.
 
-On the UV-K5 v3 / UV-K1, a message can hold the prosigns SK, BK, KA, SN and
-UR. Each counts as one character and plays back run together. CHIRP shows them
+On the UV-K5 v3 / UV-K1, a message can hold the prosigns SK, BK, KA, SN, UR
+and SOS. Each counts as one character and plays back run together. CHIRP shows them
 as `<SK>`, `<BK>` and so on, and you can type them that way.
 
 Recording and playback both require the radio to be in CW mode (TX

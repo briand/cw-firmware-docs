@@ -17,8 +17,8 @@ decoded text across the middle line of the screen.
   being played back.
 - On the UV-K5 v3 / UV-K1, zeros are drawn dotted so they can't be mistaken
   for the letter O.
-- On the UV-K5 v3 / UV-K1, the prosigns SK, BK, KA, SN and UR (U and R run
-  together) show as their two letters, underlined. Prosigns that share a
+- On the UV-K5 v3 / UV-K1, the prosigns SK, BK, KA, SN, UR (U and R run
+  together) and SOS show as their letters, underlined. Prosigns that share a
   pattern with punctuation show the symbol instead: BT `=`, AR `+`, KN `(` and
   AS `&`.
 
@@ -64,19 +64,17 @@ The firmware automatically opens squelch full-time whenever switching to USB and
 === "UV-K5 v3 / UV-K1"
 
     Press **F**, then long press **4** to switch the filter between wide and
-    narrow. In CW and USB those are labeled 6.25 kHz and 2.0 kHz, and the
-    VFO's info line shows `6k` or `2k`. On these radios the two settings
-    measure the same in CW: each passes about 6.5–7 kHz around the receive
-    frequency, so a signal 3 kHz away can still be copied. USB uses the same
-    filter settings. No narrower setting has been found yet for the radio's
-    BK4829 chip. In FM and AM the same press switches that mode's own wide and
-    narrow widths.
+    narrow in FM and AM. The VFO's info line shows the width.
 
-    Switching a VFO to CW selects the 2k filter. Switching it back to FM or AM
-    puts back the width it had before.
+    CW and USB have a single 6.25 kHz filter, so there's nothing to switch:
+    the press gives an error (a short 500 Hz dit in CW), the info line shows no
+    width, and the `Filter` menu shows `6.25k` as the only choice. The radio's
+    BK4829 chip has narrower settings on paper, but in CW they measured the
+    same as 6.25 kHz: about 6.5–7 kHz around the receive frequency, so a signal
+    3 kHz away can still be copied.
 
-    The `FILTER WIDTH` [side-key action](#side-key-actions) switches the same
-    filter.
+    The `FILTER WIDTH` [side-key action](#side-key-actions) does the same,
+    including the error in CW and USB.
 
 === "UV-K5 (v1 original)"
 
@@ -138,7 +136,8 @@ and a key legend.
 
 The screen also closes when you start keying, or after 5 seconds without a
 key press. While an offset is applied, the VFO's info line shows a tag such as
-`R+0.12` (RIT), `X-0.05` (XIT) or `RX+0.12` (both), in kHz.
+`R+0.12` (RIT), `X-0.05` (XIT) or `RX+0.12` (both), in kHz, in place of the
+`MONI` / `SQL` label.
 
 The radio's error beep can't sound in CW, so a key the screen can't act on
 plays a short, low 500 Hz dit through the sidetone instead. That's a step
@@ -168,8 +167,8 @@ UP/DOWN.
 - Keyer mode and key input work like a menu: nothing changes until you press
   **M**. The popup shows a ✓ at its left end for **M** (with a small `M` beside
   it when `SetNav` is UP/DOWN) and an ✗ at its right end for **EXIT**.
-  **EXIT**, keying, transmitting, or 5 seconds without a key press closes it
-  without changing anything.
+  **EXIT**, keying, transmitting, or 20 seconds without a key press (the same
+  as the menu) closes it without changing anything.
 - Speed changes as soon as you press an arrow and stays however the popup
   closes, including when you start keying. The popup closes by itself after
   2 seconds without a key press.

@@ -75,7 +75,7 @@ From the top, the screen shows:
 
 Each character is checked as soon as it's decoded, and the score resets when
 you change drills. Keying that doesn't decode to a character, such as an
-unknown pattern or more than seven elements, shows as `*` and counts as a miss.
+unknown pattern or more than nine elements, shows as `*` and counts as a miss.
 
 The drills wait until you pause for a word space before playing anything or
 reacting to a miss. They never play over your keying, and the rest of a word
