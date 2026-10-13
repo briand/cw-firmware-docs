@@ -5,11 +5,22 @@ prefixed with `CW` on the radio's display. This page documents what each one
 does, the values you can set, and where the original UV-K5 (v1) hardware
 differs from the UV-K5 v3 and UV-K1.
 
-Open the menu with **M**, then scroll (or press a number key to jump)
-until you reach the `CW...` entries.
+=== "UV-K5 v3 / UV-K1"
 
-!!! tip
-    The `CW` entries are the last ones in the menu, so when you first turn the radio on, you can scroll up to reach them immediately.
+    Press **M** to open the menu. It opens on a list of categories with `CW`
+    at the top, so press **M** again to see the CW items. **EXIT** goes back
+    to the category list, and the menu reopens on the category you used last.
+    The `All` category at the bottom has every item in the original numbered
+    order, and typing an item's number on the category screen jumps straight
+    to it.
+
+=== "UV-K5 (v1 original)"
+
+    Open the menu with **M**, then scroll (or press a number key to jump)
+    until you reach the `CW...` entries.
+
+    !!! tip
+        The `CW` entries are the last ones in the menu, so when you first turn the radio on, you can scroll up to reach them immediately.
 
 ## CW Tone Frequency — `CWfreq`
 

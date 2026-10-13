@@ -27,6 +27,15 @@ All releases: [uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv
 Latest binary for K5v3 / K1: [nr7y.k1-k5v3.v1.3.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.3/nr7y.k1-k5v3.v1.3.bin)
 
 Chirp Module: [nr7y.k1-k5v3.chirp.v1.3.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.3/nr7y.k1-k5v3.chirp.v1.3.py)
+
+!!! note
+    Use the CHIRP module from the same release as your firmware. Newer modules
+    check the radio before uploading and refuse to write to one running older
+    firmware, since that would scramble its CW and USB channel settings. If
+    CHIRP says the radio's firmware is too old, flash the new firmware first,
+    then upload. A saved image from older firmware still opens, and is
+    converted when you load it.
+
 ## Flash it
 
 !!! tip

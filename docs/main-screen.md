@@ -165,10 +165,9 @@ screen. Their arrows follow `SetNav`: left/right with LEFT/RIGHT, up/down with
 UP/DOWN.
 
 - Keyer mode and key input work like a menu: nothing changes until you press
-  **M**. The popup shows a ✓ at its left end for **M** (with a small `M` beside
-  it when `SetNav` is UP/DOWN) and an ✗ at its right end for **EXIT**.
-  **EXIT**, keying, transmitting, or 20 seconds without a key press (the same
-  as the menu) closes it without changing anything.
+  **M**. The popup's title has `M` and a ✓ at its left end, above the **M**
+  key, as a reminder. **EXIT**, keying, transmitting, or 20 seconds without a
+  key press (the same as the menu) closes it without changing anything.
 - Speed changes as soon as you press an arrow and stays however the popup
   closes, including when you start keying. The popup closes by itself after
   2 seconds without a key press.
@@ -178,6 +177,15 @@ UP/DOWN.
 - Pressing the same side key again steps keyer mode or key input, and closes
   the speed popup. A side key with a different action closes the popup and runs
   that action.
+
+### Running an action once {#action-picker}
+
+Press **F**, then long press a side key, to pick any action from the list and
+run it once without changing what the key is assigned to. The arrow keys
+step through the actions, **M** runs the one shown, and **EXIT** or **F**
+closes the list. It also closes after 5 seconds without a key press, when you
+press PTT, or when a signal comes in. Each side key remembers its last pick
+until the radio is turned off.
 
 ### Default key layout
 
