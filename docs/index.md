@@ -23,7 +23,8 @@ This mod builds on existing open-source firmware for the respective radio models
 - External paddle support with rework - allows direct connection of a standard paddle with no cable change
 - External paddle support without rework using a custom cable
 - Macro message recording by keying and playback
-- Code Practice mode with optional flashlight LED sending
+- Code Practice mode with optional flashlight LED sending, plus callsign send and copy drills with Farnsworth spacing (UV-K5 v3 / UV-K1)
+- RIT/XIT, a stuck-key transmit timeout, and CW quick actions for the side keys (UV-K5 v3 / UV-K1)
 
 ## Upstream projects
 

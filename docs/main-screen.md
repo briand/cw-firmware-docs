@@ -15,6 +15,12 @@ decoded text across the middle line of the screen.
 - A small play-arrow glyph appears at the far left of the line while a
   [recorded message](menus-and-settings.md#cw-messages-cwmsg1-cwmsg4) is
   being played back.
+- On the UV-K5 v3 / UV-K1, zeros are drawn dotted so they can't be mistaken
+  for the letter O.
+- On the UV-K5 v3 / UV-K1, the prosigns SK, BK, KA, SN, UR (U and R run
+  together) and SOS show as their letters, underlined. Prosigns that share a
+  pattern with punctuation show the symbol instead: BT `=`, AR `+`, KN `(` and
+  AS `&`.
 
 ## Button shortcuts
 
@@ -23,7 +29,7 @@ These long-press shortcuts are active on the main screen.
 | Button | Action |
 | --- | --- |
 | Long press `0 / FM` | Cycle modulation: FM → AM → USB → CW → (back to FM) |
-| Long press `4 / FC` (UV-K5 v3 / UV-K1: **`F`**, then long press `4`) | Cycle filter width (only while in CW mode) |
+| Long press `4 / FC` (UV-K5 v3 / UV-K1: **`F`**, then long press `4`) | Change filter width |
 | Long press `5 / NOAA` (UV-K5 v3 / UV-K1: **`F`**, then long press `5`) | Launch the [Code Practice Oscillator](code-practice-oscillator.md) |
 | Long press `7 / VOX` | Toggle CW break-in (`CWbkin`) on/off |
 | Long press `8 / R` | Toggle SSB cross-mode |
@@ -32,6 +38,9 @@ Filter width and CPO are the only two of these that need the **F** prefix
 on the UV-K5 v3 / UV-K1 — on the original UV-K5 (v1) both are plain long
 presses, same as the other three shortcuts. Modulation cycling, break-in,
 and cross-mode are plain long presses (no F prefix) on every model.
+
+On the UV-K5 v3 / UV-K1, a short press of `*` in CW mode opens
+[RIT/XIT adjust](#rit-xit). In other modes `*` works as before.
 
 ### Modulation cycling — long press `0/FM`
 
@@ -52,7 +61,24 @@ The firmware automatically opens squelch full-time whenever switching to USB and
 
 ### Filter width — long press `4/FC`
 
-Only does this while the radio is in CW mode, in the other modes this will launch the scanner. Cycles through the available IF filter bandwidths, which can help narrow out other signals or noise next to the one you're trying to copy. The current filter width (when not the default "wide" setting) is shown in the status area of the screen.
+=== "UV-K5 v3 / UV-K1"
+
+    Press **F**, then long press **4** to switch the filter between wide and
+    narrow in FM and AM. The VFO's info line shows the width.
+
+    CW and USB have a single 6.25 kHz filter, so there's nothing to switch:
+    the press gives an error (a short 500 Hz dit in CW), the info line shows no
+    width, and the `Filter` menu shows `6.25k` as the only choice. The radio's
+    BK4829 chip has narrower settings on paper, but in CW they measured the
+    same as 6.25 kHz: about 6.5–7 kHz around the receive frequency, so a signal
+    3 kHz away can still be copied.
+
+    The `FILTER WIDTH` [side-key action](#side-key-actions) does the same,
+    including the error in CW and USB.
+
+=== "UV-K5 (v1 original)"
+
+    Only does this while the radio is in CW mode, in the other modes this will launch the scanner. Cycles through the available IF filter bandwidths, which can help narrow out other signals or noise next to the one you're trying to copy. The current filter width (when not the default "wide" setting) is shown in the status area of the screen.
 
 ### Code Practice Oscillator — long press `5/NOAA`
 
@@ -82,6 +108,110 @@ While cross-mode is on, the modulation indicator on the main screen shows
 `CWx` instead of plain `CW`.
 
 Default: off. The toggle reverts to off on every power cycle.
+
+## RIT/XIT (UV-K5 v3 / UV-K1 only) {#rit-xit}
+
+RIT shifts your receive frequency and XIT your transmit frequency by the
+same offset, up to ±9.99 kHz in 10 Hz steps, without moving the dial. You can
+turn either or both on. The offset and switches live in memory only, so the
+radio always powers on with both off and the offset at zero.
+
+In CW mode, press `*` to open the adjust screen. If RIT and XIT are both off
+when you open it, RIT turns on. The screen shows the received signal (S-units
+or S9+dB, plus dBm) for peaking the offset on a station, the offset in kHz,
+`RIT` and `XIT` (highlighted when on), the frequency the offset puts you on,
+and a key legend.
+
+| Key | Action |
+|---|---|
+| **1** / **3** | -10 Hz / +10 Hz |
+| **4** / **6** | -100 Hz / +100 Hz |
+| **7** / **9** | -1 kHz / +1 kHz |
+| Arrow keys | ±10 Hz. Which arrows follows the `SetNav` setting. |
+| **2** | RIT on/off |
+| **8** | XIT on/off |
+| **5** | Zero the offset |
+| **0** | Move the dial by the offset and zero it (VFO mode, and only when the new frequency is in band) |
+| **\*** or **EXIT** | Close |
+
+The screen also closes when you start keying, or after 5 seconds without a
+key press. While an offset is applied, the VFO's info line shows a tag such as
+`R+0.12` (RIT), `X-0.05` (XIT) or `RX+0.12` (both), in kHz, in place of the
+`MONI` / `SQL` label.
+
+The radio's error beep can't sound in CW, so a key the screen can't act on
+plays a short, low 500 Hz dit through the sidetone instead. That's a step
+past ±9.99 kHz (the offset stops at the limit), **0** when it can't move the
+dial, and **M** or **F**.
+
+## CW side-key actions (UV-K5 v3 / UV-K1 only) {#side-key-actions}
+
+You can assign these actions to the side keys and to a long press of **M**,
+in the `F1Shrt`, `F1Long`, `F2Shrt`, `F2Long` and `M Long` menus or from
+CHIRP. The [CW message](menus-and-settings.md#cw-messages-cwmsg1-cwmsg4) play
+and repeat actions are in the same list.
+
+| Action | What it does |
+|---|---|
+| CW KEYER MODE | The first press shows the current [keyer mode](menus-and-settings.md#cw-keyer-mode-cwkmod), and each further press (or the arrow keys) steps through Iambic A, Iambic B, Ultimatic and Bug. Press **M** to apply it. |
+| PROPER ROGER | Sends a "proper roger": an R with a long dah (di-daaaah-dit). [`CWrgr`](menus-and-settings.md#cwrgr) sets the dah length. The LED glows amber while it sends. CW mode only; other modes give an error beep. |
+| CW SPEED | Opens a popup where the arrow keys change the keyer speed (10–45 WPM) straight away. The speed is saved when the popup closes. In CW, a step past 10 or 45 WPM plays a short, low 500 Hz dit through the sidetone, since the radio's error beep can't sound in CW. |
+| CW KEY INPUT | Works like CW KEYER MODE for the [key input](menus-and-settings.md#cw-key-input-cwkin): the first press shows the current input, further presses or the arrow keys step it, and **M** applies it. If the new input reads as stuck, the radio goes back to PTT HandKey and shows `KEY STUCK`. |
+| CW BREAK-IN | Turns [break-in](menus-and-settings.md#cw-break-in-cwbkin) on or off, the same as long press **7**. The `BKIN` icon shows the result. |
+| CODE PRACTICE | Opens the [Code Practice Oscillator](code-practice-oscillator.md). |
+
+The keyer mode, speed and key input popups sit over the middle of the main
+screen. Their arrows follow `SetNav`: left/right with LEFT/RIGHT, up/down with
+UP/DOWN.
+
+- Keyer mode and key input work like a menu: nothing changes until you press
+  **M**. The popup's title has `M` and a ✓ at its left end, above the **M**
+  key, as a reminder. **EXIT**, keying, transmitting, or 20 seconds without a
+  key press (the same as the menu) closes it without changing anything.
+- Speed changes as soon as you press an arrow and stays however the popup
+  closes, including when you start keying. The popup closes by itself after
+  2 seconds without a key press.
+- Any other key closes a popup and then does its normal job, so you can start
+  typing a frequency straight away. An unapplied keyer mode or key input is
+  dropped.
+- Pressing the same side key again steps keyer mode or key input, and closes
+  the speed popup. A side key with a different action closes the popup and runs
+  that action.
+
+### Running an action once {#action-picker}
+
+Press **F**, then long press a side key, to pick any action from the list and
+run it once without changing what the key is assigned to. The arrow keys
+step through the actions, **M** runs the one shown, and **EXIT** or **F**
+closes the list. It also closes after 5 seconds without a key press, when you
+press PTT, or when a signal comes in. Each side key remembers its last pick
+until the radio is turned off.
+
+### Default key layout
+
+On a new radio, or after a Reset ALL, the keys start with this layout:
+
+| Key | Default action |
+|---|---|
+| `F1Shrt` | PROPER ROGER |
+| `F1Long` | PLAY CW MSG 1 |
+| `F2Shrt` | CW SPEED |
+| `F2Long` | CW KEY INPUT |
+| `M Long` | MONITOR |
+
+These defaults only fill keys that have never been set. Once you assign an
+action, from the menu or from CHIRP, the radio keeps it, and a radio upgraded
+from earlier firmware keeps the actions it already had.
+
+## Transmit timeout (UV-K5 v3 / UV-K1 only) {#tx-timeout}
+
+If keying runs for 7 seconds without a gap of at least two dit lengths, the
+radio stops keying, drops transmit, and shows `TX TIMEOUT` / `RELEASE KEY`.
+Normal sending always pauses between characters, so this catches a stuck key
+or a shorted paddle, including one that sends an endless string of dits.
+Holding the key down for a long tuning carrier trips it too. Keying stays
+locked out until the key has been released for 1 second. A
+message that's playing back stops too.
 
 ## Next
 

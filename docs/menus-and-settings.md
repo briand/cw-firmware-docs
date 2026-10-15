@@ -5,11 +5,22 @@ prefixed with `CW` on the radio's display. This page documents what each one
 does, the values you can set, and where the original UV-K5 (v1) hardware
 differs from the UV-K5 v3 and UV-K1.
 
-Open the menu with **M**, then scroll (or press a number key to jump)
-until you reach the `CW...` entries.
+=== "UV-K5 v3 / UV-K1"
 
-!!! tip
-    The `CW` entries are the last ones in the menu, so when you first turn the radio on, you can scroll up to reach them immediately.
+    Press **M** to open the menu. It opens on a list of categories with `CW`
+    at the top, so press **M** again to see the CW items. **EXIT** goes back
+    to the category list, and the menu reopens on the category you used last.
+    The `All` category at the bottom has every item in the original numbered
+    order, and typing an item's number on the category screen jumps straight
+    to it.
+
+=== "UV-K5 (v1 original)"
+
+    Open the menu with **M**, then scroll (or press a number key to jump)
+    until you reach the `CW...` entries.
+
+    !!! tip
+        The `CW` entries are the last ones in the menu, so when you first turn the radio on, you can scroll up to reach them immediately.
 
 ## CW Tone Frequency — `CWfreq`
 
@@ -23,8 +34,20 @@ Sets the sidetone (and transmitted CW tone) frequency.
 Sets the volume of the sidetone you hear in your speaker while
 sending.
 
-- Range: `OFF`, then levels 1–6.
-- Default: level 4.
+=== "UV-K5 v3 / UV-K1"
+
+    - Range: `OFF`, then levels 1–15.
+    - Default: level 7.
+
+    Each level also sets the radio's audio DAC gain while the sidetone plays,
+    so the low levels stay quiet even with the volume knob turned up for a
+    weak station. A radio upgraded from firmware with six levels keeps the same
+    loudness under a new number: old levels 1–6 become 6, 11, 12, 13, 14 and 15.
+
+=== "UV-K5 (v1 original)"
+
+    - Range: `OFF`, then levels 1–6.
+    - Default: level 4.
 
 This only affects what you hear locally — it has no effect on the
 transmitted signal. `OFF` is only really useful if you're using an external keyer that has its own sidetone.
@@ -37,9 +60,13 @@ selected in [`CWkin`](#cw-key-input-cwkin).
 - **Mode A** — Curtis iambic Mode A style, edge-triggered dit/dah memory
 - **Mode B** — Accu-keyer iambic Mode B style, dit/dah memory, adds the trailing opposite element when both paddles are released during an element, and Elecraft-style partial edge-triggering
 - **Ultimatic** — both paddles squeezed at once sends whichever one was pressed *most recently*, rather than alternating dit/dah like the iambic modes. No dit/dah memory.
-- **Bug** — semi-automatic bug keyer. The dah paddle behaves like a plain hand key (hold it down for a continuous dah, any length). The dit paddle auto-repeats dits at the configured [`CWwpm`](#cw-keying-speed-cwwpm) speed for as long as it's held, with no trailing element or extra gap when released.
+- **Bug** — semi-automatic bug keyer. The dah paddle behaves like a plain hand key (hold it down for a continuous dah, any length). The dit paddle auto-repeats dits at the configured [`CWwpm`](#cw-keying-speed-cwwpm) speed for as long as it's held, with no trailing element or extra gap when released. On the UV-K5 v3 / UV-K1, the radio leaves one element space after a dah before the next element. A dit you flick during that space, or while the dah is still down, is remembered and sent as soon as the space has passed, so a quick flick right after a dah is never lost.
 
 Default: Mode B.
+
+On the UV-K5 v3 / UV-K1, the CW KEYER MODE [side-key
+action](main-screen.md#side-key-actions) steps through these modes from the
+main screen and applies the one you pick when you press **M**.
 
 ## CW Keying Speed — `CWwpm`
 
@@ -59,6 +86,11 @@ plain hand key.
 When an input mode other than PTT or Side Btn is chosen, the firmware will test the iambic inputs. If a short is detected, the screen will show `key err` and will not accept the mode change. 
 
 The short-detect routine also runs at radio startup, and if a stuck key is detected the display will show `CW KEY STUCK` and revert to PTT HandKey input mode temporarily. To fix this: turn the radio back off, release the keys, and turn it on again to re-initialize the input mode.
+
+On the UV-K5 v3 / UV-K1, the CW KEY INPUT [side-key
+action](main-screen.md#side-key-actions) steps through these inputs from the
+main screen and applies the one you pick when you press **M**, with the same
+stuck-key check.
 
 #### Common input configs (all radios)
 
@@ -120,11 +152,15 @@ choose:
 - **Repeat** — send the stored message repeatedly, with the delay set by
   [`CWmrpt`](#cw-message-repeat-delay-cwmrpt) between repeats.
 
+On the UV-K5 v3 / UV-K1, a message can hold the prosigns SK, BK, KA, SN, UR
+and SOS. Each counts as one character and plays back run together. CHIRP shows them
+as `<SK>`, `<BK>` and so on, and you can type them that way.
+
 Recording and playback both require the radio to be in CW mode (TX
 modulation set to CW). Break-in (`CWbkin`) must be enabled for a message to transmit RF, otherwise it will play sidetone only. Messages will play with the WPM set in `CWwpm`.
 
 !!! tip
-    Message play and repeat actions may also be mapped to a keypress, using the menu items `F1Short`, `F1Long`, `F2Short`, `F2Long`, `M Long`.
+    Message play and repeat actions may also be mapped to a keypress, using the menu items `F1Shrt`, `F1Long`, `F2Shrt`, `F2Long`, `M Long`. The UV-K5 v3 / UV-K1 has more [CW side-key actions](main-screen.md#side-key-actions).
 
 ## CW Message Repeat Delay — `CWmrpt`
 
@@ -134,6 +170,15 @@ repeat mode.
 - Range: 0–127 seconds.
 - Default: 4 seconds.
 
+## Proper Roger Length — `CWrgr` (UV-K5 v3 / UV-K1 only) {#cwrgr}
+
+Sets the length of the dah, in dits, in the PROPER ROGER [side-key
+action](main-screen.md#side-key-actions). The radio shows it as `Dah` and a
+number of dits.
+
+- Range: 3–20 dits. 3 sends a plain R.
+- Default: 9 dits.
+
 ## CW Break-in — `CWbkin`
 
 When enabled, sending CW automatically keys the transmitter for the
@@ -142,6 +187,19 @@ keyer), rather than requiring a separate PTT press.
 
 - Range: `OFF` / `ON`.
 - Default: `ON`.
+
+On the UV-K5 v3 / UV-K1, [`CWhang`](#cwhang) sets how long the transmitter
+stays up after your last element.
+
+## CW Hang Time — `CWhang` (UV-K5 v3 / UV-K1 only) {#cwhang}
+
+Sets how long the radio waits after your last element before going back to
+receive. With break-in on, that's how long the transmitter stays up. With
+break-in off, it's how long the sidetone holds the audio before receive audio
+comes back.
+
+- Range: 10–2000 ms, in 10 ms steps.
+- Default: 300 ms.
 
 ## CEC Cable Calibration (UV-K5 v1 only)
 
