@@ -24,9 +24,9 @@ Latest binary for K5 original: [nr7y_1.2.packed.bin](https://github.com/briand/u
 
 All releases: [uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases)
 
-Latest binary for K5v3 / K1: [nr7y.k1-k5v3.v1.3.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.3/nr7y.k1-k5v3.v1.3.bin)
+Latest binary for K5v3 / K1: [nr7y.k1-k5v3.v1.4.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.v1.4.bin)
 
-Chirp Module: [nr7y.k1-k5v3.chirp.v1.3.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.3/nr7y.k1-k5v3.chirp.v1.3.py)
+Chirp Module: [nr7y.k1-k5v3.chirp.v1.3.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.chirp.v1.4.py)
 
 !!! note
     Use the CHIRP module from the same release as your firmware. Newer modules
@@ -65,4 +65,4 @@ n7six tool and K5TOOl can dump or restore calibration data.
 Both these tools can dump or restore calibration data.
 
 !!! note
-    The web-based tools talk to the radio over WebSerial, which only works in Chrome/Chromium-based browsers.
+    The web-based tools talk to the radio over WebSerial, which only works in a selection of modern browsers.
