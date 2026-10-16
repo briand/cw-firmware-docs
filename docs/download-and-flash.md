@@ -26,7 +26,9 @@ All releases: [uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv
 
 Latest binary for K5v3 / K1: [nr7y.k1-k5v3.v1.4.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.v1.4.bin)
 
-Chirp Module: [nr7y.k1-k5v3.chirp.v1.4.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.chirp.v1.4.py)
+Chirp Module: [nr7y.k1-k5v3.chirp.v1.4a.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py)
+
+_The chirp module was updated to 1.4a on 10/15 to fix an issue with action selections._
 
 !!! note
     Use the CHIRP module from the same release as your firmware. Newer modules
