@@ -68,3 +68,37 @@ Both these tools can dump or restore calibration data.
 
 !!! note
     The web-based tools talk to the radio over WebSerial, which only works in a selection of modern browsers.
+
+## Program the radio with CHIRP
+
+The CHIRP module lets you edit channels, CW messages, side key actions and
+other settings from your computer. It's for the UV-K5 v3 / UV-K1 firmware
+only. Download the module from the [UV-K5 v3 / UV-K1
+downloads](#uv-k5-v3-uv-k1-downloads) above.
+
+CHIRP doesn't ship with this module, so you load it yourself from the file you
+downloaded. That needs CHIRP's developer mode, which is off by default.
+
+1. Install a recent [CHIRP-next](https://chirpmyradio.com/projects/chirp/wiki/Download)
+   build if you don't already have one.
+2. Turn on developer mode: **Help → Developer Mode**. CHIRP asks to restart;
+   let it. You only need to do this once.
+3. Load the module: **File → Load Module**, then pick the `.py` file you
+   downloaded. CHIRP warns that modules can run code on your computer; accept
+   to continue.
+4. Read from the radio: **Radio → Download from radio**. Choose vendor
+   **Quansheng** and the model **UV-K1 & UV-K5 V3 (F4HWN Fusion)** with the
+   **NR7Y** variant, then your serial port.
+5. Make your changes, then **Radio → Upload to radio**.
+
+!!! warning
+    A loaded module only lasts until you close CHIRP. Each time you start
+    CHIRP, repeat **File → Load Module** before you download from or upload
+    to the radio. If you skip it, the NR7Y model won't be in the list. Don't
+    substitute one of CHIRP's built-in Quansheng models; they don't know
+    about the CW settings.
+
+!!! tip
+    If CHIRP can't talk to the radio, make sure the radio isn't in CW mode
+    with a port-based paddle input. See [CHIRP programming and the paddle
+    port](hardware/cw-paddle-input.md#how-is-serial-port-chirp-programming-affected-by-the-rework).
