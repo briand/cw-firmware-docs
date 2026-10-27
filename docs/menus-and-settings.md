@@ -49,6 +49,9 @@ sending.
     - Range: `OFF`, then levels 1–6.
     - Default: level 4.
 
+    [CW enunciation](blind-boot-mode.md#cw-enunciation) plays at this level
+    too, so with `OFF` nothing is heard.
+
 This only affects what you hear locally — it has no effect on the
 transmitted signal. `OFF` is only really useful if you're using an external keyer that has its own sidetone.
 
@@ -60,7 +63,7 @@ selected in [`CWkin`](#cw-key-input-cwkin).
 - **Mode A** — Curtis iambic Mode A style, edge-triggered dit/dah memory
 - **Mode B** — Accu-keyer iambic Mode B style, dit/dah memory, adds the trailing opposite element when both paddles are released during an element, and Elecraft-style partial edge-triggering
 - **Ultimatic** — both paddles squeezed at once sends whichever one was pressed *most recently*, rather than alternating dit/dah like the iambic modes. No dit/dah memory.
-- **Bug** — semi-automatic bug keyer. The dah paddle behaves like a plain hand key (hold it down for a continuous dah, any length). The dit paddle auto-repeats dits at the configured [`CWwpm`](#cw-keying-speed-cwwpm) speed for as long as it's held, with no trailing element or extra gap when released. On the UV-K5 v3 / UV-K1, the radio leaves one element space after a dah before the next element. A dit you flick during that space, or while the dah is still down, is remembered and sent as soon as the space has passed, so a quick flick right after a dah is never lost.
+- **Bug** — semi-automatic bug keyer. The dah paddle behaves like a plain hand key (hold it down for a continuous dah, any length). The dit paddle auto-repeats dits at the configured [`CWwpm`](#cw-keying-speed-cwwpm) speed for as long as it's held, with no trailing element or extra gap when released. The radio leaves one element space after a dah before the next element. A dit you flick during that space, or while the dah is still down, is remembered and sent as soon as the space has passed, so a quick flick right after a dah is never lost.
 
 Default: Mode B.
 
@@ -160,7 +163,7 @@ Recording and playback both require the radio to be in CW mode (TX
 modulation set to CW). Break-in (`CWbkin`) must be enabled for a message to transmit RF, otherwise it will play sidetone only. Messages will play with the WPM set in `CWwpm`.
 
 !!! tip
-    Message play and repeat actions may also be mapped to a keypress, using the menu items `F1Shrt`, `F1Long`, `F2Shrt`, `F2Long`, `M Long`. The UV-K5 v3 / UV-K1 has more [CW side-key actions](main-screen.md#side-key-actions).
+    Message play and repeat actions may also be mapped to a keypress, using the menu items `F1Shrt`, `F1Long`, `F2Shrt`, `F2Long`, `M Long`. See [CW side-key actions](main-screen.md#side-key-actions) for the other CW actions.
 
 ## CW Message Repeat Delay — `CWmrpt`
 
@@ -170,7 +173,7 @@ repeat mode.
 - Range: 0–127 seconds.
 - Default: 4 seconds.
 
-## Proper Roger Length — `CWrgr` (UV-K5 v3 / UV-K1 only) {#cwrgr}
+## Proper Roger Length — `CWrgr` {#cwrgr}
 
 Sets the length of the dah, in dits, in the PROPER ROGER [side-key
 action](main-screen.md#side-key-actions). The radio shows it as `Dah` and a
@@ -200,6 +203,20 @@ comes back.
 
 - Range: 10–2000 ms, in 10 ms steps.
 - Default: 300 ms.
+
+## Voice prompts — `Voice` (UV-K5 v1 only) {#voice}
+
+Not a `CW` item, but it turns on the CW enunciation features: with `Voice`
+`ON`, menu items with no voice clip, mode changes and code practice are
+announced in CW, and the SAY LABEL side-key action works.
+
+- Range: `OFF` / `ON`.
+- Default: `OFF` on a radio with erased settings, such as a first-time
+  flash.
+
+See [Blind boot mode and Say Label](blind-boot-mode.md) for the full
+details, and a one-step way to set the radio up for an operator who can't
+see the screen.
 
 ## CEC Cable Calibration (UV-K5 v1 only)
 

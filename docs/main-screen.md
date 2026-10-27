@@ -48,6 +48,9 @@ Cycle between the modulation modes: FM → AM → USB → CW → (back to FM)
 
 The firmware automatically opens squelch full-time whenever switching to USB and CW modes. Use side button 1 (or map a different button to the `monitor` action) to close squelch.
 
+On the UV-K5 (v1), with `Voice` on, the radio sends the new mode's name in
+CW (`FM`, `AM`, `USB` or `CW`). See [CW enunciation](blind-boot-mode.md#cw-enunciation).
+
 !!! warning
     Selecting **USB** mode lets you *receive* and listen to upper-sideband
     SSB signals — the radio listens to baseband from the carrier frequency so
@@ -144,7 +147,7 @@ plays a short, low 500 Hz dit through the sidetone instead. That's a step
 past ±9.99 kHz (the offset stops at the limit), **0** when it can't move the
 dial, and **M** or **F**.
 
-## CW side-key actions (UV-K5 v3 / UV-K1 only) {#side-key-actions}
+## CW side-key actions {#side-key-actions}
 
 You can assign these actions to the side keys and to a long press of **M**,
 in the `F1Shrt`, `F1Long`, `F2Shrt`, `F2Long` and `M Long` menus or from
@@ -153,24 +156,39 @@ and repeat actions are in the same list.
 
 | Action | What it does |
 |---|---|
-| CW KEYER MODE | The first press shows the current [keyer mode](menus-and-settings.md#cw-keyer-mode-cwkmod), and each further press (or the arrow keys) steps through Iambic A, Iambic B, Ultimatic and Bug. Press **M** to apply it. |
-| PROPER ROGER | Sends a "proper roger": an R with a long dah (di-daaaah-dit). [`CWrgr`](menus-and-settings.md#cwrgr) sets the dah length. The LED glows amber while it sends. CW mode only; other modes give an error beep. |
-| CW SPEED | Opens a popup where the arrow keys change the keyer speed (10–45 WPM) straight away. The speed is saved when the popup closes. In CW, a step past 10 or 45 WPM plays a short, low 500 Hz dit through the sidetone, since the radio's error beep can't sound in CW. |
-| CW KEY INPUT | Works like CW KEYER MODE for the [key input](menus-and-settings.md#cw-key-input-cwkin): the first press shows the current input, further presses or the arrow keys step it, and **M** applies it. If the new input reads as stuck, the radio goes back to PTT HandKey and shows `KEY STUCK`. |
-| CW BREAK-IN | Turns [break-in](menus-and-settings.md#cw-break-in-cwbkin) on or off, the same as long press **7**. The `BKIN` icon shows the result. |
-| CODE PRACTICE | Opens the [Code Practice Oscillator](code-practice-oscillator.md). |
+| PROPER ROGER | Sends a "proper roger": an R with a long dah (di-daaaah-dit). [`CWrgr`](menus-and-settings.md#cwrgr) sets the dah length. On the UV-K5 v3 / UV-K1 the LED glows amber while it sends. CW mode only; other modes give an error beep. |
+| CW SPEED | Opens a popup where the arrow keys change the keyer speed (10–45 WPM) straight away. The speed is saved when the popup closes. |
+| CW KEYER MODE (UV-K5 v3 / UV-K1) | The first press shows the current [keyer mode](menus-and-settings.md#cw-keyer-mode-cwkmod), and each further press (or the arrow keys) steps through Iambic A, Iambic B, Ultimatic and Bug. Press **M** to apply it. |
+| CW KEY INPUT (UV-K5 v3 / UV-K1) | Works like CW KEYER MODE for the [key input](menus-and-settings.md#cw-key-input-cwkin): the first press shows the current input, further presses or the arrow keys step it, and **M** applies it. If the new input reads as stuck, the radio goes back to PTT HandKey and shows `KEY STUCK`. |
+| CW BREAK-IN (UV-K5 v3 / UV-K1) | Turns [break-in](menus-and-settings.md#cw-break-in-cwbkin) on or off, the same as long press **7**. The `BKIN` icon shows the result. |
+| CODE PRACTICE (UV-K5 v3 / UV-K1) | Opens the [Code Practice Oscillator](code-practice-oscillator.md). |
+| SAY LABEL (UV-K5 v1) | Reads out the frequency on the main screen, or the menu item or value in the menu. Needs `Voice` on. See [Say Label](blind-boot-mode.md#say-label). |
 
-The keyer mode, speed and key input popups sit over the middle of the main
-screen. Their arrows follow `SetNav`: left/right with LEFT/RIGHT, up/down with
-UP/DOWN.
+=== "UV-K5 v3 / UV-K1"
 
-- Keyer mode and key input work like a menu: nothing changes until you press
+    The keyer mode, speed and key input popups sit over the middle of the
+    main screen. Their arrows follow `SetNav`: left/right with LEFT/RIGHT,
+    up/down with UP/DOWN. In CW, a speed step past 10 or 45 WPM plays a
+    short, low 500 Hz dit through the sidetone, since the radio's error beep
+    can't sound in CW.
+
+=== "UV-K5 (v1 original)"
+
+    The speed popup opens from the main screen only, and **UP** / **DOWN**
+    change the speed. A step past 10 or 45 WPM gives an error beep. With
+    `Voice` on, the popup sends a CW `5` at each new speed and stays open
+    until you close it. See
+    [setting your speed by ear](blind-boot-mode.md#setting-your-speed-by-ear).
+
+The popups work like this:
+
+- Keyer mode and key input (UV-K5 v3 / UV-K1) work like a menu: nothing changes until you press
   **M**. The popup's title has `M` and a ✓ at its left end, above the **M**
   key, as a reminder. **EXIT**, keying, transmitting, or 20 seconds without a
   key press (the same as the menu) closes it without changing anything.
 - Speed changes as soon as you press an arrow and stays however the popup
   closes, including when you start keying. The popup closes by itself after
-  2 seconds without a key press.
+  2 seconds without a key press, except on the UV-K5 v1 with `Voice` on.
 - Any other key closes a popup and then does its normal job, so you can start
   typing a frequency straight away. An unapplied keyer mode or key input is
   dropped.
@@ -178,7 +196,7 @@ UP/DOWN.
   the speed popup. A side key with a different action closes the popup and runs
   that action.
 
-### Running an action once {#action-picker}
+### Running an action once (UV-K5 v3 / UV-K1 only) {#action-picker}
 
 Press **F**, then long press a side key, to pick any action from the list and
 run it once without changing what the key is assigned to. The arrow keys
@@ -187,7 +205,7 @@ closes the list. It also closes after 5 seconds without a key press, when you
 press PTT, or when a signal comes in. Each side key remembers its last pick
 until the radio is turned off.
 
-### Default key layout
+### Default key layout (UV-K5 v3 / UV-K1 only)
 
 On a new radio, or after a Reset ALL, the keys start with this layout:
 
@@ -203,10 +221,11 @@ These defaults only fill keys that have never been set. Once you assign an
 action, from the menu or from CHIRP, the radio keeps it, and a radio upgraded
 from earlier firmware keeps the actions it already had.
 
-## Transmit timeout (UV-K5 v3 / UV-K1 only) {#tx-timeout}
+## Transmit timeout {#tx-timeout}
 
 If keying runs for 7 seconds without a gap of at least two dit lengths, the
-radio stops keying, drops transmit, and shows `TX TIMEOUT` / `RELEASE KEY`.
+radio stops keying and drops transmit. The UV-K5 v3 / UV-K1 also shows
+`TX TIMEOUT` / `RELEASE KEY`.
 Normal sending always pauses between characters, so this catches a stuck key
 or a shorted paddle, including one that sends an endless string of dits.
 Holding the key down for a long tuning carrier trips it too. Keying stays
@@ -217,3 +236,4 @@ message that's playing back stops too.
 
 - [Menus and settings](menus-and-settings.md)
 - [Code Practice Oscillator](code-practice-oscillator.md)
+- [Blind boot mode and Say Label](blind-boot-mode.md) (UV-K5 v1)

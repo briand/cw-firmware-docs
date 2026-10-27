@@ -46,6 +46,7 @@ nav:
   - Main Screen: main-screen.md
   - Menus and Settings: menus-and-settings.md
   - Code Practice Oscillator: code-practice-oscillator.md
+  - Blind Boot Mode and Say Label: blind-boot-mode.md
   - Hardware and Reworks:
     - CW Paddle Input: hardware/cw-paddle-input.md
     - Paddle Rework Overview: hardware/rework-overview.md

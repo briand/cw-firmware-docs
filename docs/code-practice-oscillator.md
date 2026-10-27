@@ -13,7 +13,8 @@ copying callsigns, with optional Farnsworth spacing.
 
 === "UV-K5 (v1 original)"
 
-    Long press **5**.
+    Long press **5**. With `Voice` on, the radio sends `CPO` in CW as it
+    starts. See [CW enunciation](blind-boot-mode.md#cw-enunciation).
 
 === "UV-K5 v3 / UV-K1"
 

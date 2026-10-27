@@ -11,6 +11,7 @@ This site is the companion manual for the Quansheng UV-K5/K5v3/K1 firmware CW mo
 - [Download and flash](download-and-flash.md)
 - [Main screen](main-screen.md)
 - [Menus and settings](menus-and-settings.md)
+- [Blind boot mode and Say Label](blind-boot-mode.md) (UV-K5 v1)
 - [CW paddle input — cable or rework?](hardware/cw-paddle-input.md)
 - [Paddle rework overview](hardware/rework-overview.md)
 
@@ -24,7 +25,9 @@ This mod builds on existing open-source firmware for the respective radio models
 - External paddle support without rework using a custom cable
 - Macro message recording by keying and playback
 - Code Practice mode with optional flashlight LED sending, plus callsign send and copy drills with Farnsworth spacing (UV-K5 v3 / UV-K1)
-- RIT/XIT, a stuck-key transmit timeout, and CW quick actions for the side keys (UV-K5 v3 / UV-K1)
+- Proper roger, a CW speed popup, and a stuck-key transmit timeout
+- RIT/XIT and more CW quick actions for the side keys (UV-K5 v3 / UV-K1)
+- A [blind boot mode](blind-boot-mode.md) with voice and CW readout of the frequency and menus (UV-K5 v1)
 
 ## Upstream projects
 
