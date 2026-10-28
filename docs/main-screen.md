@@ -29,6 +29,7 @@ These long-press shortcuts are active on the main screen.
 | Button | Action |
 | --- | --- |
 | Long press `0 / FM` | Cycle modulation: FM → AM → USB → CW → (back to FM) |
+| **`F`** then long press `0 / FM` | Enable FM Broadcast receiver (UV-K5 v3 / UV-K1 only) |
 | Long press `4 / FC` (UV-K5 v3 / UV-K1: **`F`**, then long press `4`) | Change filter width |
 | Long press `5 / NOAA` (UV-K5 v3 / UV-K1: **`F`**, then long press `5`) | Launch the [Code Practice Oscillator](code-practice-oscillator.md) |
 | Long press `7 / VOX` | Toggle CW break-in (`CWbkin`) on/off |
