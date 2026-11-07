@@ -9,6 +9,7 @@ This site is the companion manual for the Quansheng UV-K5/K5v3/K1 firmware CW mo
 
 - [Identify your radio](hardware/identify-your-radio.md)
 - [Download and flash](download-and-flash.md)
+- [Release notes](release-notes.md) — what changed in each UV-K5 v3 / UV-K1 release
 - [Main screen](main-screen.md)
 - [Menus and settings](menus-and-settings.md)
 - [Blind boot mode and Say Label](blind-boot-mode.md) (UV-K5 v1)

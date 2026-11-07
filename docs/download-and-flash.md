@@ -24,6 +24,8 @@ Latest binary for K5 original: [nr7y_1.2.packed.bin](https://github.com/briand/u
 
 All releases: [uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases)
 
+What changed in each release: [Release notes](release-notes.md)
+
 Latest binary for K5v3 / K1: [nr7y.k1-k5v3.v1.4.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.v1.4.bin)
 
 Chirp Module: [nr7y.k1-k5v3.chirp.v1.4a.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py)
@@ -65,6 +67,13 @@ n7six tool and K5TOOl can dump or restore calibration data.
 * [n7six Multi-firmware tool](https://n7six.github.io/UVTools/) in K1/K5 version 2 mode
 
 Both these tools can dump or restore calibration data.
+
+!!! info "Multiboot"
+    From v2.0, the UV-K5 v3 / UV-K1 firmware can keep several firmware images
+    on the radio and switch between them at power-on. Flashing with one of
+    these tools also updates the multiboot Main slot. Read
+    [Multiboot](f4hwn-functions.md#multiboot) before you flash over a multiboot setup, or put
+    firmware into a slot.
 
 !!! note
     The web-based tools talk to the radio over WebSerial, which only works in a selection of modern browsers.

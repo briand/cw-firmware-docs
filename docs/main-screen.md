@@ -12,6 +12,9 @@ decoded text across the middle line of the screen.
 
 - Shows up to ~19 characters at a time; once the line fills, older text
   scrolls off the left as new characters are decoded.
+- On the UV-K5 v3 / UV-K1, [`CWdisp`](menus-and-settings.md#cwdisp) sets
+  how long your sent text stays up after you stop keying: about 1, 5 or 10
+  seconds, or until it's cleared.
 - A small play-arrow glyph appears at the far left of the line while a
   [recorded message](menus-and-settings.md#cw-messages-cwmsg1-cwmsg4) is
   being played back.
@@ -21,6 +24,26 @@ decoded text across the middle line of the screen.
   together) and SOS show as their letters, underlined. Prosigns that share a
   pattern with punctuation show the symbol instead: BT `=`, AR `+`, KN `(` and
   AS `&`.
+
+## CW key input indicator (UV-K5 v3 / UV-K1 only) {#key-input-indicator}
+
+While the transmit VFO is in CW, the status bar at the top of the screen shows
+the current [key input](menus-and-settings.md#cw-key-input-cwkin) as two or
+three letters. It sits where F4HWN shows the PTT mode, which doesn't apply in
+CW.
+
+The first letter is the input, the second is `H` for handkey or `I` for
+iambic, and a third letter `R` means the paddle is reversed.
+
+| Indicator | Key input |
+|---|---|
+| `PH` | PTT HandKey |
+| `TH` | TRS HandKey |
+| `SI` / `SIR` | Side Btn Iambic / Reversed |
+| `TI` / `TIR` | TRS Iambic / Reversed |
+| `BI` / `BIR` | TRS+Btn Iambic / Reversed |
+| `UI` / `UIR` | USB Port Iambic / Reversed |
+| `UH` | USB Port HandKey |
 
 ## Button shortcuts
 
@@ -157,7 +180,7 @@ and repeat actions are in the same list.
 
 | Action | What it does |
 |---|---|
-| PROPER ROGER | Sends a "proper roger": an R with a long dah (di-daaaah-dit). [`CWrgr`](menus-and-settings.md#cwrgr) sets the dah length. On the UV-K5 v3 / UV-K1 the LED glows amber while it sends. CW mode only; other modes give an error beep. |
+| PROPER ROGER | Sends a "proper roger": an R with a long dah (di-daaaah-dit). [`CWrgr`](menus-and-settings.md#cwrgr) sets the dah length, and on the UV-K5 v3 / UV-K1 [`CWrtyp`](menus-and-settings.md#cwrtyp) can lead it with E E or E S. On the UV-K5 v3 / UV-K1 the LED glows amber while it sends. CW mode only; other modes give an error beep. |
 | CW SPEED | Opens a popup where the arrow keys change the keyer speed (10–45 WPM) straight away. The speed is saved when the popup closes. |
 | CW KEYER MODE (UV-K5 v3 / UV-K1) | The first press shows the current [keyer mode](menus-and-settings.md#cw-keyer-mode-cwkmod), and each further press (or the arrow keys) steps through Iambic A, Iambic B, Ultimatic and Bug. Press **M** to apply it. |
 | CW KEY INPUT (UV-K5 v3 / UV-K1) | Works like CW KEYER MODE for the [key input](menus-and-settings.md#cw-key-input-cwkin): the first press shows the current input, further presses or the arrow keys step it, and **M** applies it. If the new input reads as stuck, the radio goes back to PTT HandKey and shows `KEY STUCK`. |

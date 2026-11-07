@@ -109,7 +109,9 @@ stuck-key check.
   | Port+Btn Iambic Reversed * | Same as above with dit/dah swapped. |
 
 !!! note
-    (*) The 'Port' input modes [require rework](hardware/rework-overview.md)
+    (*) The 'Port' input modes [require rework](hardware/rework-overview.md).
+    On the UV-K5 v3 / UV-K1 the menu calls them 'TRS' (`TRS HandKey`,
+    `TRS Iambic` and so on), so they aren't confused with the USB Port modes.
 
 #### Model-specific input configs
 
@@ -132,6 +134,10 @@ stuck-key check.
     | USB Port Iambic | Paddle wired through the USB-C connector. Iambic keyer active. |
     | USB Port Iambic Reversed | Same as above with dit/dah swapped. |
     | USB Port Handkey | USB-C TRS input treated as a straight key on either paddle contact, no iambic keyer. |
+
+    In all three USB Port modes, PTT is also a straight key, so you can send
+    a hand-keyed roger (or anything else) without leaving the paddle mode.
+    Pressing it stops a playing message, the same as the paddle.
 
     !!! note
         The 'USB Port' input modes require a [USB-C to TRS cable](hardware/usb-trs-cable.md)
@@ -182,6 +188,22 @@ number of dits.
 - Range: 3–20 dits. 3 sends a plain R.
 - Default: 9 dits.
 
+## Proper Roger Type — `CWrtyp` (UV-K5 v3 / UV-K1 only) {#cwrtyp}
+
+Sets what the PROPER ROGER [side-key action](main-screen.md#side-key-actions)
+sends ahead of its long-dah R.
+
+| Setting | Sends |
+|---|---|
+| `Normal` | R: di-daaaah-dit |
+| `Stutter` | E E R: dit dit di-daaaah-dit |
+| `Skipping` | E S R: dit dididit di-daaaah-dit |
+
+Every type leaves 3 dits of space before the long dah, and
+[`CWrgr`](#cwrgr) sets the dah length.
+
+- Default: `Normal`.
+
 ## CW Break-in — `CWbkin`
 
 When enabled, sending CW automatically keys the transmitter for the
@@ -203,6 +225,21 @@ comes back.
 
 - Range: 10–2000 ms, in 10 ms steps.
 - Default: 300 ms.
+
+## CW Decode Display Time — `CWdisp` (UV-K5 v3 / UV-K1 only) {#cwdisp}
+
+Sets how long the [decoded text](main-screen.md#cw-decode-display) of what
+you sent stays on screen after you stop keying. The radio shows it as
+`CW Decode` and a time. It covers your paddle or key sending, with or without
+break-in, and message playback. The new time takes effect the next time you
+key.
+
+- Range: `1000 ms`, `5000 ms`, `10000 ms` or `Infinite`. The times are
+  approximate.
+- Default: `1000 ms`.
+
+`Infinite` stops the text from timing out. It still clears when you switch
+to a handkey input, and other screens still take over the line.
 
 ## Voice prompts — `Voice` (UV-K5 v1 only) {#voice}
 
