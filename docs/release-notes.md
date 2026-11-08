@@ -34,8 +34,9 @@ to their defaults.
    `nr7y.k1-k5v3.chirp.v1.4a.py`). Download from the radio and **save the
    image** (`.img`). Keep this file; it's your backup.
 2. Flash v2.0 (see [Download and Flash](download-and-flash.md)).
-3. On the radio, run **Reset → ALL** and let it restart. This clears out the
-   old layout. Calibration isn't affected.
+3. On the radio, boot into "hidden menu mode" by holding PTT+side1 at poweron,
+   then choose **Reset → ALL** from the menu and let it restart. This clears
+   out the old layout. Calibration isn't affected.
 4. In CHIRP, load the v2.0 module (`brass.k1-k5v3.chirp.v2.0.py`), then
    **open the image you saved in step 1**. The module converts it to the v2.0
    layout as it loads: channels, settings, CW settings, macros and key
