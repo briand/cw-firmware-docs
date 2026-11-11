@@ -18,7 +18,9 @@ Download a ready-to-flash binary from the releases page of the firmware repo for
 
 [uv-k5-firmware-custom releases](https://github.com/briand/uv-k5-firmware-custom-cw/releases)
 
-Latest binary for K5 original: [nr7y_1.2.packed.bin](https://github.com/briand/uv-k5-firmware-custom-cw/releases/download/v1.2/nr7y_1.2.packed.bin)
+Latest binary for K5 original: [nr7y_1.5.packed.bin](https://github.com/briand/uv-k5-firmware-custom-cw/releases/download/v1.5/nr7y_1.5.packed.bin)
+
+Chirp Module: [uvk5_NR7Y_1.5.py](https://github.com/briand/uv-k5-firmware-custom-cw/releases/download/v1.5/uvk5_NR7Y_1.5.py)
 
 ### UV-K5 v3 / UV-K1 downloads
 
@@ -26,11 +28,15 @@ All releases: [uv-k1-k5v3-firmware-custom releases](https://github.com/briand/uv
 
 What changed in each release: [Release notes](release-notes.md)
 
-Latest binary for K5v3 / K1: [nr7y.k1-k5v3.v1.4.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.v1.4.bin)
+Latest binary for K5v3 / K1: [brass.k1-k5v3.v2.0.bin](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v2.0/brass.k1-k5v3.v2.0.bin)
 
-Chirp Module: [nr7y.k1-k5v3.chirp.v1.4a.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py)
+Chirp Module: [brass.k1-k5v3.chirp.v2.0.py](https://github.com/briand/uv-k1-k5v3-firmware-custom/releases/download/v2.0/brass.k1-k5v3.chirp.v2.0.py)
 
-_The chirp module was updated to 1.4a on 10/15 to fix an issue with action selections._
+!!! warning "Upgrading from v1.x"
+    v2.0 changes the settings layout. Save a CHIRP image with your v1.x module
+    **before** you flash, or your CW settings, macros and key assignments go
+    back to their defaults. Follow the steps in
+    [Before you upgrade](release-notes.md#before-you-upgrade).
 
 !!! note
     Use the CHIRP module from the same release as your firmware. Newer modules
@@ -55,11 +61,10 @@ _The chirp module was updated to 1.4a on 10/15 to fix an issue with action selec
 ### UV-K5 v1 original flash tools
 
 * [egzumer's UVTools](https://egzumer.github.io/uvtools/)
-* [n7six Multi-firmware tool](https://n7six.github.io/UVTools/) in K5/K5 version 1 mode
 * [K5TOOL](https://github.com/qrp73/K5TOOL) if you'd rather flash from the command line. Run using:  
 `k5tool -wrflash <firmwarename.packed.bin>`
 
-n7six tool and K5TOOl can dump or restore calibration data.
+K5TOOL can dump or restore calibration data for K5 v1 radios. You can also dump calibration data (but not flash the firmware!) from a v1 radio using UVTools2 (link below).
 
 ### UV-K5 v3 / UV-K1 flash tools
 
@@ -81,9 +86,11 @@ Both these tools can dump or restore calibration data.
 ## Program the radio with CHIRP
 
 The CHIRP module lets you edit channels, CW messages, side key actions and
-other settings from your computer. It's for the UV-K5 v3 / UV-K1 firmware
-only. Download the module from the [UV-K5 v3 / UV-K1
-downloads](#uv-k5-v3-uv-k1-downloads) above.
+other settings from your computer. Each firmware release posts a CHIRP module
+versioned to match it, alongside the firmware binary. Download the module from
+the same release as the firmware on your radio (see
+[Get the firmware](#get-the-firmware) above). The steps below are the same for
+every radio; only the module file and the model you pick differ.
 
 CHIRP doesn't ship with this module, so you load it yourself from the file you
 downloaded. That needs CHIRP's developer mode, which is off by default.
@@ -96,14 +103,17 @@ downloaded. That needs CHIRP's developer mode, which is off by default.
    downloaded. CHIRP warns that modules can run code on your computer; accept
    to continue.
 4. Read from the radio: **Radio → Download from radio**. Choose vendor
-   **Quansheng** and the model **UV-K1 & UV-K5 V3 (F4HWN Fusion)** with the
-   **NR7Y** variant, then your serial port.
+   **Quansheng**, then the model and variant for your radio, then your serial
+   port:
+    - UV-K5 v3 / UV-K1: model **UV-K1 & UV-K5 V3 (F4HWN Fusion)**, variant
+      **Brass**.
+    - UV-K5 (v1 original): model **UV-K5**, variant **NR7Y**.
 5. Make your changes, then **Radio → Upload to radio**.
 
 !!! warning
     A loaded module only lasts until you close CHIRP. Each time you start
     CHIRP, repeat **File → Load Module** before you download from or upload
-    to the radio. If you skip it, the NR7Y model won't be in the list. Don't
+    to the radio. If you skip it, the Brass or NR7Y variant won't be in the list. Don't
     substitute one of CHIRP's built-in Quansheng models; they don't know
     about the CW settings.
 
